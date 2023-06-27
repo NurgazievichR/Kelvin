@@ -4,5 +4,8 @@ from apps.product.views import ProductAPIViewSet, ProductImageAPIViewSet
 
 
 router = DefaultRouter()
-router.register('', ProductAPIViewSet)
-router.register('images/', ProductImageAPIViewSet)
+router.register('products', ProductAPIViewSet)
+router.register('images', ProductImageAPIViewSet)
+
+
+urlpatterns = router.urls
