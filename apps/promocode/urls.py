@@ -1,7 +1,10 @@
 from django.urls import path
-from apps.promocode.views import PromocodeView
+from rest_framework.routers import DefaultRouter
+from apps.promocode.views import PromocodeViewSet
 
-urlpatterns = [
-    path('promocodes/', PromocodeView.as_view()),
-    path('promocodes/<int:pk>', PromocodeView.as_view())
-]
+
+router = DefaultRouter()
+router.register('', PromocodeViewSet)
+
+
+urlpatterns = router.urls

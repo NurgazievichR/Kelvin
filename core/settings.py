@@ -47,6 +47,7 @@ THIRD_APPS = [
 LOCAL_APPS = [
     'apps.product',
     'apps.setting',
+    'apps.promocode',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + LOCAL_APPS

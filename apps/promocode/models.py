@@ -9,6 +9,6 @@ class Promocode(models.Model):
         return f'{self.code}'
 
     class Meta:
-        ordering = ('-id')
+        ordering = ('-id',)
         verbose_name = 'Промокод'
         verbose_name_plural = 'Промокоды'
