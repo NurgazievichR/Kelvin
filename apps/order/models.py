@@ -11,7 +11,7 @@ class Order(models.Model):
     promocode = models.CharField('Промокод', max_length=365, blank=True, null=True)
 
     def __str__(self):
-        return f'{self.id}'
+        return f'{self.id}--Имя:-{self.name}--Фамилия:-{self.surname}'
     
     class Meta:
         verbose_name = 'Заказ'
