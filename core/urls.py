@@ -57,16 +57,18 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
 
-# {
-#     "name": "Ramazan",
-#     "surname": "Jalalidinov",
-#     "email": "zalalidinovroma@gmail.com",
-#     "phone_number": "+996558888245",
-#     "address": "Rezidence Osh",
-#     "order_items": [
-#         {
-#             "product": 1,
-#             "quantity": 7
-#         }
-#     ]
-# }
+{
+    "name": "Ramazan",
+    "surname": "Jalalidinov",
+    "email": "zalalidinovroma@gmail.com",
+    "phone_number": "+996558888245",
+    "address": "Rezidence Osh",
+    "order_items": [
+        {
+            "product": 1,
+            "quantity": 7
+        }
+    ],
+
+    "promocode": ""
+}

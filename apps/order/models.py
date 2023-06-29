@@ -8,13 +8,14 @@ class Order(models.Model):
     email  = models.EmailField(validators=[validate_email])
     phone_number = models.CharField('Номер телефона', max_length=365)
     address = models.CharField('Адрес', max_length=365)
+    promocode = models.CharField('Промокод', max_length=365, blank=True, null=True)
 
     def __str__(self):
         return f'{self.id}'
     
     class Meta:
         verbose_name = 'Заказ'
-        verbose_name = 'Заказы'
+        verbose_name_plural = 'Заказы'
         ordering = ('-id',)
 
 
