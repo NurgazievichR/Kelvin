@@ -43,6 +43,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', include('apps.product.urls')),
     path('promocode/', include('apps.promocode.urls')),
+    path('order/', include('apps.order.urls')),
     # swagger
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
@@ -53,3 +54,19 @@ urlpatterns = [
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+
+# {
+#     "name": "Ramazan",
+#     "surname": "Jalalidinov",
+#     "email": "zalalidinovroma@gmail.com",
+#     "phone_number": "+996558888245",
+#     "address": "Rezidence Osh",
+#     "order_items": [
+#         {
+#             "product": 1,
+#             "quantity": 7
+#         }
+#     ]
+# }
