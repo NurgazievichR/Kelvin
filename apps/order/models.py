@@ -28,3 +28,12 @@ class OrderItem(models.Model):
         return f'{self.id}'
     
     
+
+
+class Address(models.Model):
+    region = models.CharField('Регион', max_length=365)
+    city = models.CharField('Город', max_length=365)
+
+    def __str__(self):
+        return f'{self.reqion}////{self.city}'
+    
