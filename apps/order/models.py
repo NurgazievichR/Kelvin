@@ -35,5 +35,9 @@ class Address(models.Model):
     city = models.CharField('Город', max_length=365)
 
     def __str__(self):
-        return f'{self.reqion}////{self.city}'
+        return f'{self.region}////{self.city}'
+    
+    class Meta:
+        verbose_name = 'Адрес'
+        verbose_name_plural = 'Адреса'
     
