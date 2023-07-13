@@ -2,7 +2,7 @@ from django.db import models
 
 class Setting(models.Model):
     title = models.CharField('Название',max_length=365,blank=True, null=True )
-    icon = models.ImageField('Иконка',blank=True, null=True, upload_to='images/')
+    icon = models.ImageField('Иконка',blank=True, null=True, upload_to='media/images/')
     aboutus = models.CharField('О нас', max_length=365,blank=True, null=True)
     description = models.CharField('Описание', max_length=365,blank=True, null=True)
     address = models.CharField('Адрес',max_length=100,blank=True, null=True)

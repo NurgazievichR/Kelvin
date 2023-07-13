@@ -39,10 +39,13 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
+
 THIRD_APPS = [
+    "corsheaders",
     'rest_framework',
     'drf_yasg',
 ]
+
 
 LOCAL_APPS = [
     'apps.product',
@@ -56,6 +59,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + LOCAL_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -136,3 +140,5 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_ALLOW_ALL = True
