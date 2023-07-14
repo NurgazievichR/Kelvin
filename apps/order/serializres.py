@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework.validators import ValidationError
 from decimal import Decimal
 
-from apps.order.models import Order, OrderItem
+from apps.order.models import Order, OrderItem, Address
 from apps.product.models import Product
 from apps.promocode.models import Promocode
 
@@ -12,6 +12,12 @@ class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderItem
         fields = ['product', 'quantity']
+
+
+class AddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Address
+        fields = ['region', 'city']
 
 
 class OrderSerializer(serializers.ModelSerializer):
