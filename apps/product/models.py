@@ -1,19 +1,9 @@
 from django.db import models
 
 class Product(models.Model):
-
-    SIZES = [
-        '52 / XL',
-        '44 / XS',
-        '46 / S',
-        '48 / M',
-        '50 / L',
-    ]
-
     title = models.CharField('Название', max_length=365)
     description = models.CharField('Описание', max_length=365)
     price = models.DecimalField('Цена', decimal_places=2, max_digits=10)
-    size = models.CharField('Размер', max_length=15, choices=[(size, size) for size in SIZES])
     create_at = models.DateTimeField(auto_now_add=True)
 
 
@@ -37,3 +27,16 @@ class ProductImage(models.Model):
         ordering = ('-id',)
         verbose_name = 'Фотография'
         verbose_name_plural = 'Фотографии'
+
+
+class ProductSize(models.Model):
+    product = models.ForeignKey(Product, related_name='product_sizes', on_delete=models.CASCADE)
+    name = models.CharField('Название', max_length=365)
+
+    def __str__(self):
+        return f"{self.product.title}---------{self.id}"
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = 'Размер'
+        verbose_name_plural = 'Размеры'
