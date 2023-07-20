@@ -28,8 +28,6 @@ class OrderItem(models.Model):
         return f'{self.id}'
     
     
-
-
 class Address(models.Model):
     region = models.CharField('Регион', max_length=365)
     city = models.CharField('Город', max_length=365)
@@ -41,3 +39,13 @@ class Address(models.Model):
         verbose_name = 'Адрес'
         verbose_name_plural = 'Адреса'
     
+
+class Street(models.Model):
+    name = models.CharField('Улица', max_length=365)
+
+    def __str__(self):
+        return f"{self.name}"
+
+    class Meta:
+        verbose_name = 'Улица'
+        verbose_name_plural = 'Улицы'
